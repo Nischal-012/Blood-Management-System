@@ -1,8 +1,8 @@
 namespace Blood_Management_System
 {
-	public partial class Form1 : Form
+	public partial class formHome : Form
 	{
-		public Form1()
+		public formHome()
 		{
 			InitializeComponent();
 		}
