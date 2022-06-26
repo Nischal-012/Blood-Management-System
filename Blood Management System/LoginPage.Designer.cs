@@ -31,13 +31,13 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPage));
 			this.Title = new System.Windows.Forms.Label();
 			this.topSidePanel = new System.Windows.Forms.Panel();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.UserNameLabel = new System.Windows.Forms.Label();
 			this.UserNameEnter = new System.Windows.Forms.TextBox();
 			this.PasswordLabel = new System.Windows.Forms.Label();
 			this.PasswordArea = new System.Windows.Forms.TextBox();
 			this.LoginButton = new System.Windows.Forms.Button();
 			this.ForgotPasswordLabel = new System.Windows.Forms.LinkLabel();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.NewHereLabel = new System.Windows.Forms.Label();
 			this.SignInLabel = new System.Windows.Forms.LinkLabel();
 			this.topSidePanel.SuspendLayout();
@@ -64,6 +64,16 @@
 			this.topSidePanel.Name = "topSidePanel";
 			this.topSidePanel.Size = new System.Drawing.Size(437, 86);
 			this.topSidePanel.TabIndex = 1;
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(391, 0);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+			this.pictureBox1.TabIndex = 0;
+			this.pictureBox1.TabStop = false;
+			this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
 			// 
 			// UserNameLabel
 			// 
@@ -102,6 +112,7 @@
 			this.PasswordArea.PlaceholderText = "Password Here";
 			this.PasswordArea.Size = new System.Drawing.Size(250, 27);
 			this.PasswordArea.TabIndex = 5;
+			this.PasswordArea.UseSystemPasswordChar = true;
 			// 
 			// LoginButton
 			// 
@@ -127,16 +138,6 @@
 			this.ForgotPasswordLabel.TabIndex = 7;
 			this.ForgotPasswordLabel.TabStop = true;
 			this.ForgotPasswordLabel.Text = "Forgot Password?";
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(391, 0);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(48, 48);
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
-			this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
 			// 
 			// NewHereLabel
 			// 
