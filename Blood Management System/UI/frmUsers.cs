@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Blood_Management_System.UI
 {
-	public partial class UsersForm : Form
+	public partial class frmUsers : Form
 	{
-		public UsersForm()
+		public frmUsers()
 		{
 			InitializeComponent();
+		}
+
+		private void pictureBoxClose_Click(object sender, EventArgs e)
+		{
+			this.Hide();
 		}
 
 		private void label3_Click(object sender, EventArgs e)

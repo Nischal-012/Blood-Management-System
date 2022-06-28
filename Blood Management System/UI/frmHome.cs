@@ -1,3 +1,5 @@
+using Blood_Management_System.UI;
+
 namespace Blood_Management_System
 {
 	public partial class formHome : Form
@@ -9,7 +11,8 @@ namespace Blood_Management_System
 
 		private void contactUsToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-
+			frmUsers users = new frmUsers();
+			users.Show();
 		}
 
 		private void label1_Click(object sender, EventArgs e)
