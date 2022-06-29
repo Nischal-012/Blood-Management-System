@@ -17,11 +17,6 @@ namespace Blood_Management_System.UI
 			InitializeComponent();
 		}
 
-		private void pictureBoxClose_Click(object sender, EventArgs e)
-		{
-			this.Hide();
-		}
-
 		private void label3_Click(object sender, EventArgs e)
 		{
 
@@ -36,5 +31,9 @@ namespace Blood_Management_System.UI
 		{
 
 		}
-	}
+		private void pictureBox2_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+	}	
 }
