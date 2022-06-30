@@ -101,6 +101,7 @@
 			this.pictureBox2.Size = new System.Drawing.Size(48, 48);
 			this.pictureBox2.TabIndex = 0;
 			this.pictureBox2.TabStop = false;
+			this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
 			// 
 			// manageUsers
 			// 
@@ -316,7 +317,7 @@
 			this.dgvusers.Size = new System.Drawing.Size(508, 485);
 			this.dgvusers.TabIndex = 37;
 			// 
-			// UsersForm
+			// frmUsers
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -347,7 +348,7 @@
 			this.Controls.Add(this.pictureBox1);
 			this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Name = "UsersForm";
+			this.Name = "frmUsers";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Form1";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

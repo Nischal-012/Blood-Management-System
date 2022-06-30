@@ -31,9 +31,9 @@ namespace Blood_Management_System.UI
 		{
 
 		}
-		private void pictureBox2_Click(object sender, EventArgs e)
+		private void pictureBox2_Click_1(object sender, EventArgs e)
 		{
-			this.Close();
+			this.Hide();
 		}
 	}	
 }
