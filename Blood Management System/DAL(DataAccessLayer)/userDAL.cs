@@ -55,6 +55,7 @@ namespace Blood_Management_System.DAL_DataAccessLayer_
 		}
 
 		#endregion
+
 		#region Insert Data to the Database
 		public bool Insert(UserBussiness u)
 		{
@@ -85,7 +86,7 @@ namespace Blood_Management_System.DAL_DataAccessLayer_
 				conn.Open();
 
 				//create the int valur to check if the data is added or not
-				int row = 0;
+				int row = command.ExecuteNonQuery();
 				//if row is greater than 0 it means the data is added to the database
 				if(row>0)
 				{
@@ -113,7 +114,7 @@ namespace Blood_Management_System.DAL_DataAccessLayer_
 			return isSuccess;
 
 		}
-
+		#endregion
 		#region Update Data in database (userModule)
 		public bool Update(UserBussiness u)
 		{
@@ -134,11 +135,24 @@ namespace Blood_Management_System.DAL_DataAccessLayer_
 				command.Parameters.AddWithValue("email", u.email);
 				command.Parameters.AddWithValue("password", u.password);
 				command.Parameters.AddWithValue("full_name", u.full_name);
-				command.Parameters.AddWithValue("contact_no." u.contact_no);
+				command.Parameters.AddWithValue("contact_no.",u.contact_no);
 				command.Parameters.AddWithValue("address", u.address);
 				command.Parameters.AddWithValue("added_data", u.added_date);
 				command.Parameters.AddWithValue("image_name", u.image_name);
+				command.Parameters.AddWithValue("user_id", u.user_id);
 
+				//creating a integer to check whether the database is update or not
+				int row=command.ExecuteNonQuery();
+				if(row>0)
+				{
+					//Database Updated Sucessfully
+					isSuccess=true;
+				}
+				else
+				{
+					//Databse not updated
+					isSuccess = false;
+				}
 			}
 			catch(Exception ex)
 			{
@@ -153,5 +167,53 @@ namespace Blood_Management_System.DAL_DataAccessLayer_
 
 			return isSuccess;
 		}
+		#endregion
+
+		#region Delete Datafrom usermodule
+		public bool Delete(UserBussiness u)
+		{
+			bool isSuccess = false;
+
+			//add object to check sql connection
+			SqlConnection conn = new SqlConnection();
+			try
+			{
+				//a string to hold the sql query
+				string sql = "DELETE FROM tbl_user WHERE user_id =@user_id";
+				
+				//a command to execute sql query
+				SqlCommand command = new SqlCommand(sql, conn);
+
+				command.Parameters.AddWithValue("user_id", u.user_id);
+
+				int rows = command.ExecuteNonQuery();
+				if(rows>0)
+				{
+					//query executed successfully
+					isSuccess = true;
+				}
+				else
+				{
+					//query execution failed
+					isSuccess=false;
+				}
+
+			}
+			catch(Exception ex)
+			{
+				//Sends message when there is exception error
+				MessageBox.Show(ex.Message);
+			}
+			finally
+			{
+				//closes the connection
+				conn.Close();
+			}
+			
+
+			return isSuccess;
+		}
+		
+		#endregion
 	}
 }
