@@ -47,7 +47,7 @@
 			this.lblEmail = new System.Windows.Forms.Label();
 			this.txtContact = new System.Windows.Forms.TextBox();
 			this.lblContact = new System.Windows.Forms.Label();
-			this.AddressTextBox = new System.Windows.Forms.TextBox();
+			this.txtAddress = new System.Windows.Forms.TextBox();
 			this.lblAddress = new System.Windows.Forms.Label();
 			this.AddButton = new System.Windows.Forms.Button();
 			this.DelButton = new System.Windows.Forms.Button();
@@ -55,7 +55,10 @@
 			this.srchbar = new System.Windows.Forms.TextBox();
 			this.searchButton = new System.Windows.Forms.Button();
 			this.dgvusers = new System.Windows.Forms.DataGridView();
+			this.lblPassword = new System.Windows.Forms.Label();
+			this.txtPassword = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.panel1.SuspendLayout();
 			this.topSidePanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
@@ -76,6 +79,9 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+			this.panel1.Controls.Add(this.AddButton);
+			this.panel1.Controls.Add(this.updatebutton);
+			this.panel1.Controls.Add(this.DelButton);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panel1.Location = new System.Drawing.Point(0, 645);
 			this.panel1.Name = "panel1";
@@ -186,7 +192,7 @@
 			// 
 			// txtUserName
 			// 
-			this.txtUserName.Location = new System.Drawing.Point(264, 370);
+			this.txtUserName.Location = new System.Drawing.Point(264, 372);
 			this.txtUserName.Name = "txtUserName";
 			this.txtUserName.Size = new System.Drawing.Size(346, 27);
 			this.txtUserName.TabIndex = 27;
@@ -222,7 +228,7 @@
 			// 
 			// txtContact
 			// 
-			this.txtContact.Location = new System.Drawing.Point(264, 413);
+			this.txtContact.Location = new System.Drawing.Point(264, 459);
 			this.txtContact.Name = "txtContact";
 			this.txtContact.Size = new System.Drawing.Size(346, 27);
 			this.txtContact.TabIndex = 31;
@@ -232,26 +238,26 @@
 			this.lblContact.AutoSize = true;
 			this.lblContact.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lblContact.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.lblContact.Location = new System.Drawing.Point(141, 415);
+			this.lblContact.Location = new System.Drawing.Point(141, 458);
 			this.lblContact.Name = "lblContact";
 			this.lblContact.Size = new System.Drawing.Size(106, 25);
 			this.lblContact.TabIndex = 30;
 			this.lblContact.Text = "Contact No.";
 			// 
-			// AddressTextBox
+			// txtAddress
 			// 
-			this.AddressTextBox.Location = new System.Drawing.Point(264, 459);
-			this.AddressTextBox.Multiline = true;
-			this.AddressTextBox.Name = "AddressTextBox";
-			this.AddressTextBox.Size = new System.Drawing.Size(346, 101);
-			this.AddressTextBox.TabIndex = 33;
+			this.txtAddress.Location = new System.Drawing.Point(264, 522);
+			this.txtAddress.Multiline = true;
+			this.txtAddress.Name = "txtAddress";
+			this.txtAddress.Size = new System.Drawing.Size(346, 101);
+			this.txtAddress.TabIndex = 33;
 			// 
 			// lblAddress
 			// 
 			this.lblAddress.AutoSize = true;
 			this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lblAddress.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.lblAddress.Location = new System.Drawing.Point(141, 461);
+			this.lblAddress.Location = new System.Drawing.Point(141, 521);
 			this.lblAddress.Name = "lblAddress";
 			this.lblAddress.Size = new System.Drawing.Size(77, 25);
 			this.lblAddress.TabIndex = 32;
@@ -261,18 +267,19 @@
 			// 
 			this.AddButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
 			this.AddButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.AddButton.Location = new System.Drawing.Point(264, 588);
+			this.AddButton.Location = new System.Drawing.Point(264, 15);
 			this.AddButton.Name = "AddButton";
 			this.AddButton.Size = new System.Drawing.Size(85, 51);
 			this.AddButton.TabIndex = 34;
 			this.AddButton.Text = "ADD";
 			this.AddButton.UseVisualStyleBackColor = false;
+			this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
 			// 
 			// DelButton
 			// 
 			this.DelButton.BackColor = System.Drawing.Color.IndianRed;
 			this.DelButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.DelButton.Location = new System.Drawing.Point(512, 588);
+			this.DelButton.Location = new System.Drawing.Point(510, 15);
 			this.DelButton.Name = "DelButton";
 			this.DelButton.Size = new System.Drawing.Size(85, 51);
 			this.DelButton.TabIndex = 35;
@@ -283,7 +290,7 @@
 			// 
 			this.updatebutton.BackColor = System.Drawing.Color.Gold;
 			this.updatebutton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.updatebutton.Location = new System.Drawing.Point(378, 588);
+			this.updatebutton.Location = new System.Drawing.Point(390, 15);
 			this.updatebutton.Name = "updatebutton";
 			this.updatebutton.Size = new System.Drawing.Size(85, 51);
 			this.updatebutton.TabIndex = 36;
@@ -317,18 +324,35 @@
 			this.dgvusers.Size = new System.Drawing.Size(508, 485);
 			this.dgvusers.TabIndex = 37;
 			// 
+			// lblPassword
+			// 
+			this.lblPassword.AutoSize = true;
+			this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lblPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.lblPassword.Location = new System.Drawing.Point(141, 417);
+			this.lblPassword.Name = "lblPassword";
+			this.lblPassword.Size = new System.Drawing.Size(87, 25);
+			this.lblPassword.TabIndex = 40;
+			this.lblPassword.Text = "Password";
+			// 
+			// txtPassword
+			// 
+			this.txtPassword.Location = new System.Drawing.Point(264, 418);
+			this.txtPassword.Name = "txtPassword";
+			this.txtPassword.Size = new System.Drawing.Size(346, 27);
+			this.txtPassword.TabIndex = 41;
+			// 
 			// frmUsers
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1246, 733);
+			this.Controls.Add(this.txtPassword);
+			this.Controls.Add(this.lblPassword);
 			this.Controls.Add(this.srchbar);
 			this.Controls.Add(this.searchButton);
 			this.Controls.Add(this.dgvusers);
-			this.Controls.Add(this.updatebutton);
-			this.Controls.Add(this.DelButton);
-			this.Controls.Add(this.AddButton);
-			this.Controls.Add(this.AddressTextBox);
+			this.Controls.Add(this.txtAddress);
 			this.Controls.Add(this.lblAddress);
 			this.Controls.Add(this.txtContact);
 			this.Controls.Add(this.lblContact);
@@ -352,6 +376,7 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Form1";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.panel1.ResumeLayout(false);
 			this.topSidePanel.ResumeLayout(false);
 			this.topSidePanel.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -382,7 +407,7 @@
 		private Label lblEmail;
 		private TextBox txtContact;
 		private Label lblContact;
-		private TextBox AddressTextBox;
+		private TextBox txtAddress;
 		private Label lblAddress;
 		private Button AddButton;
 		private Button DelButton;
@@ -390,5 +415,7 @@
 		private TextBox srchbar;
 		private Button searchButton;
 		private DataGridView dgvusers;
+		private Label lblPassword;
+		private TextBox txtPassword;
 	}
 }

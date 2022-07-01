@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Blood_Management_System.BLL;
+using Blood_Management_System.DAL_DataAccessLayer_;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +19,10 @@ namespace Blood_Management_System.UI
 			InitializeComponent();
 		}
 
+		UserBussiness u = new UserBussiness();
+		userDAL dal = new userDAL();
+		string imageName = "no_image.jpg";
+
 		private void label3_Click(object sender, EventArgs e)
 		{
 
@@ -34,6 +40,18 @@ namespace Blood_Management_System.UI
 		private void pictureBox2_Click_1(object sender, EventArgs e)
 		{
 			this.Hide();
+		}
+
+		private void AddButton_Click(object sender, EventArgs e)
+		{
+			u.full_name = txtFullName.Text;
+			u.email = txtEmail.Text;
+			u.contact_no = Int16.Parse(txtContact.Text);
+			u.user_name = txtUserName.Text;
+			u.address = txtAddress.Text;
+			u.password = txtPassword.Text;
+			u.added_date = DateTime.Now;
+			u.image_name = imageName;
 		}
 	}	
 }
