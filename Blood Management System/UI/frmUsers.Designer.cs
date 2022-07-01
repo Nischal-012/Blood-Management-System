@@ -31,6 +31,9 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsers));
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.AddButton = new System.Windows.Forms.Button();
+			this.updatebutton = new System.Windows.Forms.Button();
+			this.DelButton = new System.Windows.Forms.Button();
 			this.topSidePanel = new System.Windows.Forms.Panel();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.manageUsers = new System.Windows.Forms.Label();
@@ -45,18 +48,15 @@
 			this.lblUserName = new System.Windows.Forms.Label();
 			this.txtEmail = new System.Windows.Forms.TextBox();
 			this.lblEmail = new System.Windows.Forms.Label();
-			this.txtContact = new System.Windows.Forms.TextBox();
 			this.lblContact = new System.Windows.Forms.Label();
 			this.txtAddress = new System.Windows.Forms.TextBox();
 			this.lblAddress = new System.Windows.Forms.Label();
-			this.AddButton = new System.Windows.Forms.Button();
-			this.DelButton = new System.Windows.Forms.Button();
-			this.updatebutton = new System.Windows.Forms.Button();
 			this.srchbar = new System.Windows.Forms.TextBox();
 			this.searchButton = new System.Windows.Forms.Button();
 			this.dgvusers = new System.Windows.Forms.DataGridView();
 			this.lblPassword = new System.Windows.Forms.Label();
 			this.txtPassword = new System.Windows.Forms.TextBox();
+			this.txtContact = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.topSidePanel.SuspendLayout();
@@ -87,6 +87,40 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1246, 88);
 			this.panel1.TabIndex = 14;
+			// 
+			// AddButton
+			// 
+			this.AddButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+			this.AddButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.AddButton.Location = new System.Drawing.Point(264, 15);
+			this.AddButton.Name = "AddButton";
+			this.AddButton.Size = new System.Drawing.Size(85, 51);
+			this.AddButton.TabIndex = 34;
+			this.AddButton.Text = "ADD";
+			this.AddButton.UseVisualStyleBackColor = false;
+			this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+			// 
+			// updatebutton
+			// 
+			this.updatebutton.BackColor = System.Drawing.Color.Gold;
+			this.updatebutton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.updatebutton.Location = new System.Drawing.Point(390, 15);
+			this.updatebutton.Name = "updatebutton";
+			this.updatebutton.Size = new System.Drawing.Size(85, 51);
+			this.updatebutton.TabIndex = 36;
+			this.updatebutton.Text = "UPDATE";
+			this.updatebutton.UseVisualStyleBackColor = false;
+			// 
+			// DelButton
+			// 
+			this.DelButton.BackColor = System.Drawing.Color.IndianRed;
+			this.DelButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.DelButton.Location = new System.Drawing.Point(510, 15);
+			this.DelButton.Name = "DelButton";
+			this.DelButton.Size = new System.Drawing.Size(85, 51);
+			this.DelButton.TabIndex = 35;
+			this.DelButton.Text = "DELETE";
+			this.DelButton.UseVisualStyleBackColor = false;
 			// 
 			// topSidePanel
 			// 
@@ -226,19 +260,12 @@
 			this.lblEmail.TabIndex = 28;
 			this.lblEmail.Text = "Email";
 			// 
-			// txtContact
-			// 
-			this.txtContact.Location = new System.Drawing.Point(264, 459);
-			this.txtContact.Name = "txtContact";
-			this.txtContact.Size = new System.Drawing.Size(346, 27);
-			this.txtContact.TabIndex = 31;
-			// 
 			// lblContact
 			// 
 			this.lblContact.AutoSize = true;
 			this.lblContact.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lblContact.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.lblContact.Location = new System.Drawing.Point(141, 458);
+			this.lblContact.Location = new System.Drawing.Point(141, 470);
 			this.lblContact.Name = "lblContact";
 			this.lblContact.Size = new System.Drawing.Size(106, 25);
 			this.lblContact.TabIndex = 30;
@@ -262,40 +289,6 @@
 			this.lblAddress.Size = new System.Drawing.Size(77, 25);
 			this.lblAddress.TabIndex = 32;
 			this.lblAddress.Text = "Address";
-			// 
-			// AddButton
-			// 
-			this.AddButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
-			this.AddButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.AddButton.Location = new System.Drawing.Point(264, 15);
-			this.AddButton.Name = "AddButton";
-			this.AddButton.Size = new System.Drawing.Size(85, 51);
-			this.AddButton.TabIndex = 34;
-			this.AddButton.Text = "ADD";
-			this.AddButton.UseVisualStyleBackColor = false;
-			this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
-			// 
-			// DelButton
-			// 
-			this.DelButton.BackColor = System.Drawing.Color.IndianRed;
-			this.DelButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.DelButton.Location = new System.Drawing.Point(510, 15);
-			this.DelButton.Name = "DelButton";
-			this.DelButton.Size = new System.Drawing.Size(85, 51);
-			this.DelButton.TabIndex = 35;
-			this.DelButton.Text = "DELETE";
-			this.DelButton.UseVisualStyleBackColor = false;
-			// 
-			// updatebutton
-			// 
-			this.updatebutton.BackColor = System.Drawing.Color.Gold;
-			this.updatebutton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.updatebutton.Location = new System.Drawing.Point(390, 15);
-			this.updatebutton.Name = "updatebutton";
-			this.updatebutton.Size = new System.Drawing.Size(85, 51);
-			this.updatebutton.TabIndex = 36;
-			this.updatebutton.Text = "UPDATE";
-			this.updatebutton.UseVisualStyleBackColor = false;
 			// 
 			// srchbar
 			// 
@@ -341,12 +334,21 @@
 			this.txtPassword.Name = "txtPassword";
 			this.txtPassword.Size = new System.Drawing.Size(346, 27);
 			this.txtPassword.TabIndex = 41;
+			this.txtPassword.UseSystemPasswordChar = true;
+			// 
+			// txtContact
+			// 
+			this.txtContact.Location = new System.Drawing.Point(264, 471);
+			this.txtContact.Name = "txtContact";
+			this.txtContact.Size = new System.Drawing.Size(346, 27);
+			this.txtContact.TabIndex = 42;
 			// 
 			// frmUsers
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1246, 733);
+			this.Controls.Add(this.txtContact);
 			this.Controls.Add(this.txtPassword);
 			this.Controls.Add(this.lblPassword);
 			this.Controls.Add(this.srchbar);
@@ -354,7 +356,6 @@
 			this.Controls.Add(this.dgvusers);
 			this.Controls.Add(this.txtAddress);
 			this.Controls.Add(this.lblAddress);
-			this.Controls.Add(this.txtContact);
 			this.Controls.Add(this.lblContact);
 			this.Controls.Add(this.txtEmail);
 			this.Controls.Add(this.lblEmail);
@@ -405,7 +406,6 @@
 		private Label lblUserName;
 		private TextBox txtEmail;
 		private Label lblEmail;
-		private TextBox txtContact;
 		private Label lblContact;
 		private TextBox txtAddress;
 		private Label lblAddress;
@@ -417,5 +417,6 @@
 		private DataGridView dgvusers;
 		private Label lblPassword;
 		private TextBox txtPassword;
+		private TextBox txtContact;
 	}
 }

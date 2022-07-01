@@ -13,7 +13,7 @@ namespace Blood_Management_System.BLL
 		public string email { get; set; }
 		public string password { get; set; }
 		public string full_name { get; set; }
-		public int contact_no { get; set; }
+		public string contact_no { get; set; }
 		public string address { get; set; }
 		public DateTime added_date { get; set; }
 		public string image_name { get; set; }

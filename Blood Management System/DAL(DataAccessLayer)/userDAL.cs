@@ -18,7 +18,7 @@ namespace Blood_Management_System.DAL_DataAccessLayer_
 		public DataTable Select()
 		{
 			//create an Object to connect to database
-			SqlConnection conn = new SqlConnection();
+			SqlConnection conn = new SqlConnection(myconnectionstring);
 
 			//Create a DataTable to hold the data from the data base
 			DataTable dt = new DataTable();
@@ -62,7 +62,7 @@ namespace Blood_Management_System.DAL_DataAccessLayer_
 			//create a boolean variable to set its default value to false
 			bool isSuccess = false;
 			//creating a object to connect to databse
-			SqlConnection conn = new SqlConnection();
+			SqlConnection conn = new SqlConnection(myconnectionstring);
 
 			try
 			{
@@ -121,7 +121,7 @@ namespace Blood_Management_System.DAL_DataAccessLayer_
 			bool isSuccess = false;
 
 			//Creating object for sql connection
-			SqlConnection conn = new SqlConnection();
+			SqlConnection conn = new SqlConnection(myconnectionstring);
 			try
 			{
 				//creating query for updating data
@@ -175,7 +175,7 @@ namespace Blood_Management_System.DAL_DataAccessLayer_
 			bool isSuccess = false;
 
 			//add object to check sql connection
-			SqlConnection conn = new SqlConnection();
+			SqlConnection conn = new SqlConnection(myconnectionstring);
 			try
 			{
 				//a string to hold the sql query

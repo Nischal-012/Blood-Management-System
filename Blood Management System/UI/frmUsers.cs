@@ -44,14 +44,27 @@ namespace Blood_Management_System.UI
 
 		private void AddButton_Click(object sender, EventArgs e)
 		{
+			//get the values from UI
 			u.full_name = txtFullName.Text;
 			u.email = txtEmail.Text;
-			u.contact_no = Int16.Parse(txtContact.Text);
+			u.contact_no = txtContact.Text;
 			u.user_name = txtUserName.Text;
 			u.address = txtAddress.Text;
 			u.password = txtPassword.Text;
 			u.added_date = DateTime.Now;
 			u.image_name = imageName;
+
+			//adding values from UI to the database
+			bool success = dal.Insert(u);
+
+			if(success == true)
+			{
+				MessageBox.Show("Data Added Successfully");
+			}
+			else
+			{
+				MessageBox.Show("Failed to add data");
+			}
 		}
 	}	
 }
