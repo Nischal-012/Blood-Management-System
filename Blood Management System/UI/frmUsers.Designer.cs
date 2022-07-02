@@ -292,7 +292,7 @@
 			// 
 			// srchbar
 			// 
-			this.srchbar.Location = new System.Drawing.Point(680, 102);
+			this.srchbar.Location = new System.Drawing.Point(680, 100);
 			this.srchbar.Name = "srchbar";
 			this.srchbar.Size = new System.Drawing.Size(393, 27);
 			this.srchbar.TabIndex = 39;
