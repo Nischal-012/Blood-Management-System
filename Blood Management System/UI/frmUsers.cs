@@ -79,5 +79,24 @@ namespace Blood_Management_System.UI
 			txtAddress.Text = "";
 			txtPassword.Text = "";
 		}
+
+		private void dgvusers_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			int RowIndex = e.RowIndex;
+			txtUserId.Text = dgvusers.Rows[RowIndex].Cells[0].Value.ToString();
+			txtUserName.Text = dgvusers.Rows[RowIndex].Cells[1].Value.ToString();
+			txtEmail.Text = dgvusers.Rows[RowIndex].Cells[2].Value.ToString();
+			txtPassword.Text = dgvusers.Rows[RowIndex].Cells[3].Value.ToString();
+			txtFullName.Text = dgvusers.Rows[RowIndex].Cells[4].Value.ToString();
+			txtContact.Text = dgvusers.Rows[RowIndex].Cells[5].Value.ToString();
+			txtAddress.Text = dgvusers.Rows[RowIndex].Cells[6].Value.ToString();
+			imageName = dgvusers.Rows[RowIndex].Cells[7].Value.ToString();
+		}
+
+		private void frmUsers_Load(object sender, EventArgs e)
+		{
+			DataTable dt = dal.Select();
+			dgvusers.DataSource = dt;
+		}
 	}	
 }

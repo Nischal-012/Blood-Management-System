@@ -41,7 +41,7 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.profilePictureBox = new System.Windows.Forms.PictureBox();
 			this.setPictureButton = new System.Windows.Forms.Button();
-			this.user_id = new System.Windows.Forms.TextBox();
+			this.txtUserId = new System.Windows.Forms.TextBox();
 			this.lblUserId = new System.Windows.Forms.Label();
 			this.txtFullName = new System.Windows.Forms.TextBox();
 			this.txtUserName = new System.Windows.Forms.TextBox();
@@ -197,13 +197,13 @@
 			this.setPictureButton.Text = "Set Image";
 			this.setPictureButton.UseVisualStyleBackColor = true;
 			// 
-			// user_id
+			// txtUserId
 			// 
-			this.user_id.Location = new System.Drawing.Point(264, 241);
-			this.user_id.Name = "user_id";
-			this.user_id.ReadOnly = true;
-			this.user_id.Size = new System.Drawing.Size(199, 27);
-			this.user_id.TabIndex = 22;
+			this.txtUserId.Location = new System.Drawing.Point(264, 241);
+			this.txtUserId.Name = "txtUserId";
+			this.txtUserId.ReadOnly = true;
+			this.txtUserId.Size = new System.Drawing.Size(199, 27);
+			this.txtUserId.TabIndex = 22;
 			// 
 			// lblUserId
 			// 
@@ -318,6 +318,7 @@
 			this.dgvusers.RowTemplate.Height = 29;
 			this.dgvusers.Size = new System.Drawing.Size(508, 485);
 			this.dgvusers.TabIndex = 37;
+			this.dgvusers.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvusers_RowHeaderMouseClick);
 			// 
 			// lblPassword
 			// 
@@ -365,7 +366,7 @@
 			this.Controls.Add(this.lblUserName);
 			this.Controls.Add(this.txtFullName);
 			this.Controls.Add(this.lblUserId);
-			this.Controls.Add(this.user_id);
+			this.Controls.Add(this.txtUserId);
 			this.Controls.Add(this.setPictureButton);
 			this.Controls.Add(this.profilePictureBox);
 			this.Controls.Add(this.label4);
@@ -378,6 +379,7 @@
 			this.Name = "frmUsers";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Users";
+			this.Load += new System.EventHandler(this.frmUsers_Load);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.topSidePanel.ResumeLayout(false);
@@ -401,7 +403,7 @@
 		private Label label4;
 		private PictureBox profilePictureBox;
 		private Button setPictureButton;
-		private TextBox user_id;
+		private TextBox txtUserId;
 		private Label lblUserId;
 		private TextBox txtFullName;
 		private TextBox txtUserName;
