@@ -41,7 +41,7 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.profilePictureBox = new System.Windows.Forms.PictureBox();
 			this.setPictureButton = new System.Windows.Forms.Button();
-			this.userId = new System.Windows.Forms.TextBox();
+			this.user_id = new System.Windows.Forms.TextBox();
 			this.lblUserId = new System.Windows.Forms.Label();
 			this.txtFullName = new System.Windows.Forms.TextBox();
 			this.txtUserName = new System.Windows.Forms.TextBox();
@@ -197,13 +197,13 @@
 			this.setPictureButton.Text = "Set Image";
 			this.setPictureButton.UseVisualStyleBackColor = true;
 			// 
-			// userId
+			// user_id
 			// 
-			this.userId.Location = new System.Drawing.Point(264, 241);
-			this.userId.Name = "userId";
-			this.userId.ReadOnly = true;
-			this.userId.Size = new System.Drawing.Size(199, 27);
-			this.userId.TabIndex = 22;
+			this.user_id.Location = new System.Drawing.Point(264, 241);
+			this.user_id.Name = "user_id";
+			this.user_id.ReadOnly = true;
+			this.user_id.Size = new System.Drawing.Size(199, 27);
+			this.user_id.TabIndex = 22;
 			// 
 			// lblUserId
 			// 
@@ -310,8 +310,10 @@
 			// dgvusers
 			// 
 			this.dgvusers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvusers.GridColor = System.Drawing.SystemColors.Highlight;
 			this.dgvusers.Location = new System.Drawing.Point(680, 154);
 			this.dgvusers.Name = "dgvusers";
+			this.dgvusers.ReadOnly = true;
 			this.dgvusers.RowHeadersWidth = 51;
 			this.dgvusers.RowTemplate.Height = 29;
 			this.dgvusers.Size = new System.Drawing.Size(508, 485);
@@ -363,7 +365,7 @@
 			this.Controls.Add(this.lblUserName);
 			this.Controls.Add(this.txtFullName);
 			this.Controls.Add(this.lblUserId);
-			this.Controls.Add(this.userId);
+			this.Controls.Add(this.user_id);
 			this.Controls.Add(this.setPictureButton);
 			this.Controls.Add(this.profilePictureBox);
 			this.Controls.Add(this.label4);
@@ -371,11 +373,11 @@
 			this.Controls.Add(this.topSidePanel);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.pictureBox1);
-			this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			this.ForeColor = System.Drawing.SystemColors.Desktop;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "frmUsers";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Form1";
+			this.Text = "Users";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.topSidePanel.ResumeLayout(false);
@@ -399,7 +401,7 @@
 		private Label label4;
 		private PictureBox profilePictureBox;
 		private Button setPictureButton;
-		private TextBox userId;
+		private TextBox user_id;
 		private Label lblUserId;
 		private TextBox txtFullName;
 		private TextBox txtUserName;

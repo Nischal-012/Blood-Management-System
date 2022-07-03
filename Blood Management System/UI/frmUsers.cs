@@ -60,11 +60,24 @@ namespace Blood_Management_System.UI
 			if(success == true)
 			{
 				MessageBox.Show("Data Added Successfully");
+				DataTable dt = dal.Select();
+				dgvusers.DataSource = dt;
+				Clear();
 			}
 			else
 			{
 				MessageBox.Show("Failed to add data");
 			}
+		}
+		
+		public void Clear()
+		{
+			txtFullName.Text = "";
+			txtEmail.Text = "";
+			txtContact.Text = "";
+			txtUserName.Text = "";
+			txtAddress.Text = "";
+			txtPassword.Text = "";
 		}
 	}	
 }
