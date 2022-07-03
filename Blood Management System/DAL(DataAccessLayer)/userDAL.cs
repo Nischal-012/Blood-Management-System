@@ -141,6 +141,8 @@ namespace Blood_Management_System.DAL_DataAccessLayer_
 				command.Parameters.AddWithValue("image_name", u.image_name);
 				command.Parameters.AddWithValue("user_id", u.user_id);
 
+				conn.Open();
+
 				//creating a integer to check whether the database is update or not
 				int row=command.ExecuteNonQuery();
 				if(row>0)

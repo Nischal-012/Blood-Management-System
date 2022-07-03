@@ -98,5 +98,26 @@ namespace Blood_Management_System.UI
 			DataTable dt = dal.Select();
 			dgvusers.DataSource = dt;
 		}
+
+		private void updatebutton_Click(object sender, EventArgs e)
+		{
+			u.user_id = Int32.Parse(txtUserId.Text);
+			u.full_name = txtFullName.Text;
+			u.email = txtEmail.Text;
+			u.contact_no = txtContact.Text;
+			u.user_name = txtUserName.Text;
+			u.address = txtAddress.Text;
+			u.password = txtPassword.Text;
+			u.added_date = DateTime.Now;
+			u.image_name = imageName;
+
+			bool success = dal.Update(u);
+			if (success == true)
+			{
+				DataTable dt = dal.Select();
+				dgvusers.DataSource= dt;
+				Clear();
+			}
+		}
 	}	
 }
