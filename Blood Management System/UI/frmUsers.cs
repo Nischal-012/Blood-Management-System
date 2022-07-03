@@ -101,7 +101,7 @@ namespace Blood_Management_System.UI
 
 		private void updatebutton_Click(object sender, EventArgs e)
 		{
-			u.user_id = Int32.Parse(txtUserId.Text);
+			u.user_id = int.Parse(txtUserId.Text);
 			u.full_name = txtFullName.Text;
 			u.email = txtEmail.Text;
 			u.contact_no = txtContact.Text;
